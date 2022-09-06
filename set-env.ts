@@ -2,15 +2,15 @@ var fs = require('fs');
 // Configure Angular `environment.ts` file path
 const targetPath = './src/environments/secrets.ts';
 
-// const envConfigFile = `export const secretKeys = {
-//   apiKey: '${process.env['API_KEY']}',
-// };
-// `;
-
 const envConfigFile = `export const secretKeys = {
-  apiKey: '',
+  apiKey: '${process.env['API_KEY']}',
 };
 `;
+
+// const envConfigFile = `export const secretKeys = {
+//   apiKey: '',
+// };
+// `;
 
 
 
