@@ -73,7 +73,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
 
- deployment_stage:
+  deployment_stage:
     name: Deployment (Stage)
     # Operating system to run job on
     runs-on: ubuntu-latest
