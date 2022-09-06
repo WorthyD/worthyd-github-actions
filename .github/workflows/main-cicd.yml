@@ -64,7 +64,13 @@ jobs:
       - run: npm install
       - run: npm run config
       - run: npm run build-all
-
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: './dist'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
       # Deploy to Netlify using our production secrets
       # - name: Deploy to netlify
       #   uses: netlify/actions/cli@master
@@ -74,11 +80,11 @@ jobs:
       #   with:
       #     args: deploy --dir=build --prod
       #     secrets: '["DEV_NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
-      - name: Deploy to Netlify
-        run: npx netlify deploy --build --prod
-        env:
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      # - name: Deploy to Netlify
+      #   run: npx netlify deploy --build --prod
+      #   env:
+      #     NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
 #  deployment_stage:
 #     name: Deployment (Stage)
