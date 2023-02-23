@@ -66,6 +66,7 @@ jobs:
         git-message: 'chore(release): {version}'
         git-branch: 'main'
         preset: 'angular'
+        skip-on-empty: 'false'
         tag-prefix: ''
         output-file: 'CHANGELOG.md'
 
