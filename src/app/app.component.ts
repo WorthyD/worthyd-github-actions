@@ -8,4 +8,5 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = 'worthyd-github-actions';
   test = environment.apiKey;
+  version = environment.version;
 }

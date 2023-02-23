@@ -3,9 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 import { secretKeys } from './secrets';
+const packageJson = require('../../package.json');
 export const environment = {
   production: false,
   apiKey: secretKeys.apiKey,
+  version:packageJson.version
 };
 
 /*
