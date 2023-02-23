@@ -63,6 +63,7 @@ jobs:
       with:
         github-token: ${{ secrets.TOKEN_ACTION }}
         git-message: 'chore(release): {version}'
+        git-branch: 'main'
         preset: 'angular'
         tag-prefix: ''
         output-file: 'CHANGELOG.md'
